@@ -14,7 +14,7 @@ class ShopServiceTest {
         //GIVEN
         Product product1 = new Product("1", "iphone 14");
         ProductRepo productRepo = new ProductRepo();
-        productRepo.add(product1);
+//        productRepo.add(product1);
 
 
         ShopService shopService = new ShopService(productRepo);
