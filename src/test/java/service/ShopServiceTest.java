@@ -35,9 +35,6 @@ class ShopServiceTest {
         Product product1 = new Product("1", "iphone 14");
         Product product2 = new Product("2", "iphone 13");
         ProductRepo productRepo = new ProductRepo();
-        productRepo.add(product1);
-        productRepo.add(product2);
-
 
         ShopService shopService = new ShopService(productRepo);
         shopService.addProduct(product1);
@@ -46,7 +43,7 @@ class ShopServiceTest {
         Product actual = shopService.getProduct(product1.getId());
 
         // THEN
-        Product expectedProduct = productRepo.get(product2.getId());
+        Product expectedProduct = product2;
 
         assertFalse(expectedProduct.equals(actual));
     }
@@ -57,9 +54,9 @@ class ShopServiceTest {
         Product product1 = new Product("1", "iphone 14");
         Product product2 = new Product("2", "iphone 13");
         ProductRepo productRepo = new ProductRepo();
-        productRepo.add(product1);
 
         ShopService shopService = new ShopService(productRepo);
+        shopService.addProduct(product1);
         //WHEN
         try{
             Order order2 = new Order(product2.getId(), product2);
