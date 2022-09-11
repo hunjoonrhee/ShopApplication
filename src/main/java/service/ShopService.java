@@ -5,6 +5,8 @@ import model.Product;
 import repo.OrderRepo;
 import repo.ProductRepo;
 
+import java.util.Map;
+
 public class ShopService {
     private ProductRepo productRepo;
     private OrderRepo orderRepo = new OrderRepo();
@@ -43,8 +45,8 @@ public class ShopService {
         orderRepo.get(id);
     }
 
-    public void listOrders(){
-        orderRepo.list();
+    public Map<String, Order> listOrders(){
+        return orderRepo.list();
     }
 
 }
