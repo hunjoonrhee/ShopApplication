@@ -14,13 +14,13 @@ class OrderRepoTest {
     void add_ShouldIncreaseLengthOfHashMap_ByOne() {
         // GIVEN
         OrderRepo orderRepo = new OrderRepo();
-        Product product = new Product("1", "iphone 14");
+        Product product = new Product("1", "iphone 14", 899.9);
         Order order1 = new Order("1", product);
         orderRepo.add(order1);
         int previousLength = orderRepo.list().size();
 
         // WHEN
-        Product product2 = new Product("2", "iphone 12");
+        Product product2 = new Product("2", "iphone 12", 699.9);
         Order order2 = new Order("2", product2);
         orderRepo.add(order2);
         int newLength = orderRepo.list().size();
@@ -33,7 +33,7 @@ class OrderRepoTest {
     void list_ShouldReturn_AllProducts_ForTrue() {
         // GIVEN
         OrderRepo orderRepo = new OrderRepo();
-        Product product = new Product("1", "iphone 14");
+        Product product = new Product("1", "iphone 14", 899.9);
         Order order1 = new Order("1", product);
         orderRepo.add(order1);
 
@@ -41,14 +41,14 @@ class OrderRepoTest {
         Map<String, Order> actual = orderRepo.list();
 
         // THEN
-        String expected = "{1=Order{id='1', product=Product{id='1', name='iphone 14'}}}";
+        String expected = "{1=Order{id='1', product=Product{id='1', name='iphone 14', price=899.9}}}";
         assertEquals(expected, actual.toString());
     }
     @Test
     void list_ShouldReturn_AllProducts_ForFalse() {
         // GIVEN
         OrderRepo orderRepo = new OrderRepo();
-        Product product = new Product("1", "iphone 14");
+        Product product = new Product("1", "iphone 14", 899.9);
         Order order1 = new Order("1", product);
         orderRepo.add(order1);
 
@@ -64,7 +64,7 @@ class OrderRepoTest {
     void get_ShouldReturn_ProductByGivenId_ForTure() {
         // GIVEN
         OrderRepo orderRepo = new OrderRepo();
-        Product product = new Product("1", "iphone 14");
+        Product product = new Product("1", "iphone 14", 899.9);
         Order order1 = new Order("1", product);
         orderRepo.add(order1);
 
@@ -72,14 +72,14 @@ class OrderRepoTest {
         Order actual = orderRepo.get(order1.getId());
 
         // THEN
-        String expected = "Order{id='1', product=Product{id='1', name='iphone 14'}}";
+        String expected = "Order{id='1', product=Product{id='1', name='iphone 14', price=899.9}}";
         assertEquals(expected, actual.toString());
     }
     @Test
     void get_ShouldReturn_ProductByGivenId_ForFalse() {
         // GIVEN
         OrderRepo orderRepo = new OrderRepo();
-        Product product = new Product("1", "iphone 14");
+        Product product = new Product("1", "iphone 14", 899.9);
         Order order1 = new Order("1", product);
         orderRepo.add(order1);
 

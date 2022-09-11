@@ -9,7 +9,7 @@ class ProductTest {
 
     void getId_ShouldReturnId_IdOfProduct_ForTrue(){
         // GIVEN
-        Product product1 = new Product("1", "iphone 14");
+        Product product1 = new Product("1", "iphone 14", 899.9);
 
         // WHEN
         String actual = product1.getId();
@@ -20,7 +20,7 @@ class ProductTest {
     @Test
     void getId_ShouldReturnId_IdOfProduct_ForFalse(){
         // GIVEN
-        Product product1 = new Product("1", "iphone 14");
+        Product product1 = new Product("1", "iphone 14", 899.9);
 
         // WHEN
         String actual = product1.getId();
@@ -33,7 +33,7 @@ class ProductTest {
 
     void getName_ShouldReturnName_NameOfProduct_ForTrue(){
         // GIVEN
-        Product product1 = new Product("1", "iphone 14");
+        Product product1 = new Product("1", "iphone 14", 899.9);
 
         // WHEN
         String actual = product1.getName();
@@ -44,7 +44,7 @@ class ProductTest {
     @Test
     void getName_ShouldReturnName_NameOfProduct_ForFalse(){
         // GIVEN
-        Product product1 = new Product("1", "iphone 14");
+        Product product1 = new Product("1", "iphone 14", 899.9);
 
         // WHEN
         String actual = product1.getName();

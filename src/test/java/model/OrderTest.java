@@ -8,7 +8,7 @@ class OrderTest {
     @Test
     void getProduct_ShouldReturn_OrderedProduct_ForTure(){
         // GIVEN
-        Product product1 = new Product("1", "iphone 14");
+        Product product1 = new Product("1", "iphone 14", 899.9);
         Order order = new Order("1", product1);
 
         // WHEN
@@ -22,7 +22,7 @@ class OrderTest {
     @Test
     void getProduct_ShouldReturn_OrderedProduct_ForFalse(){
         // GIVEN
-        Product product1 = new Product("1", "iphone 14");
+        Product product1 = new Product("1", "iphone 14", 899.9);
         Order order = new Order("1", product1);
 
         // WHEN

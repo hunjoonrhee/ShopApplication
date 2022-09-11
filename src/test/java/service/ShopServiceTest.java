@@ -12,7 +12,7 @@ class ShopServiceTest {
     @Test
     void getProduct_ShouldReturn_ProductOfGivenId_ForTrue(){
         //GIVEN
-        Product product1 = new Product("1", "iphone 14");
+        Product product1 = new Product("1", "iphone 14", 899.9);
         ProductRepo productRepo = new ProductRepo();
 //        productRepo.add(product1);
 
@@ -32,8 +32,8 @@ class ShopServiceTest {
     @Test
     void getProduct_ShouldReturn_ProductOfGivenId_ForFalse(){
         //GIVEN
-        Product product1 = new Product("1", "iphone 14");
-        Product product2 = new Product("2", "iphone 13");
+        Product product1 = new Product("1", "iphone 14", 899.9);
+        Product product2 = new Product("2", "iphone 13", 799.9);
         ProductRepo productRepo = new ProductRepo();
         productRepo.add(product1);
         productRepo.add(product2);
@@ -54,8 +54,8 @@ class ShopServiceTest {
     @Test
     void addOrder_ShouldThrowException_WhenAWrongProductOrdered(){
         //GIVEN
-        Product product1 = new Product("1", "iphone 14");
-        Product product2 = new Product("2", "iphone 13");
+        Product product1 = new Product("1", "iphone 14", 899.9);
+        Product product2 = new Product("2", "iphone 13", 799.9);
         ProductRepo productRepo = new ProductRepo();
         productRepo.add(product1);
 
