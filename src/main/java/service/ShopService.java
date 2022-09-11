@@ -19,6 +19,9 @@ public class ShopService {
     }
 
     public Product getProduct(String id){
+        if(!productRepo.list().containsKey(id)){
+            throw new IllegalArgumentException("Ungültige ID. Es gibt kein Produkt mit der ID " + id);
+        }
         return productRepo.get(id);
     }
 
@@ -34,10 +37,13 @@ public class ShopService {
     }
 
     public void getOrder(String id){
+        if(!orderRepo.list().containsKey(id)){
+            throw new IllegalArgumentException("Ungültige ID. Es gibt kein Produkt mit der ID " + id);
+        }
         orderRepo.get(id);
     }
 
-    public void listOrder(){
+    public void listOrders(){
         orderRepo.list();
     }
 
