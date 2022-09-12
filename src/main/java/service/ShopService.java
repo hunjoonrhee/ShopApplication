@@ -5,6 +5,8 @@ import model.Product;
 import repo.OrderRepo;
 import repo.ProductRepo;
 
+import java.util.Map;
+
 public class ShopService {
     private ProductRepo productRepo;
     private OrderRepo orderRepo = new OrderRepo();
@@ -25,8 +27,8 @@ public class ShopService {
         return productRepo.get(id);
     }
 
-    public void listProducts(){
-        productRepo.list();
+    public Map<String, Product> listProducts(){
+        return productRepo.list();
     }
 
     public void addOrder(Order order){
@@ -36,15 +38,15 @@ public class ShopService {
         orderRepo.add(order);
     }
 
-    public void getOrder(String id){
+    public Order getOrder(String id){
         if(!orderRepo.list().containsKey(id)){
             throw new IllegalArgumentException("Ungültige ID. Es gibt kein Produkt mit der ID " + id);
         }
-        orderRepo.get(id);
+        return orderRepo.get(id);
     }
 
-    public void listOrders(){
-        orderRepo.list();
+    public Map<String, Order> listOrders(){
+        return orderRepo.list();
     }
 
 }
