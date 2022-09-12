@@ -17,6 +17,7 @@
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -25,6 +26,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
